@@ -10,14 +10,15 @@ test ('Home page', async ({page})=>{
   await expect(page).toHaveTitle('Arc Inclusion | Accessibility Services | Digital Accessibility Agency');
 
   await page.getByRole('button', { name: 'Accept cookies' }).click();
+  await page.waitForTimeout(5000);
   await page.getByRole('link', { name: 'Our approach to accessibility' }).click();
   await page.waitForTimeout(3000);
 
   //image validation
   const img1 = await page.getByAltText('Three people engaged in inclusive user testing, smiling and interacting with a computer screen.');
-  expect (img1).toBeVisible();
+  await expect (img1).toBeVisible();
   const img2 = await page.getByAltText('Person on a video call with an accessibility consultant, shown on a laptop screen during a remote pair programming session.');
-  expect (img2).toBeVisible();
+  await expect (img2).toBeVisible();
   await page.waitForTimeout(3000);
 
   //Accordion validation
