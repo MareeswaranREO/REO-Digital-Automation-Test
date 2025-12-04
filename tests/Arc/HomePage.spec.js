@@ -27,13 +27,16 @@ test ('Home page', async ({page})=>{
   await page.getByText('What is the difference').click();
   await page.getByText('What is the difference').click();
   await page.waitForTimeout(3000);
+  await page.evaluate(() => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
   //CTA click validation
   await page.getByRole('link', { name: 'Home', exact: true }).click();
   await page.getByRole('link', { name: 'Start your stay accessible' }).click();
   await page.getByRole('link', { name: 'Learn why sustainable' }).click();
   await page.locator('#arc-header').getByRole('link', { name: 'Arc logo with arc letter in' }).click();
-  await page.waitForTimeout(3000);
+  
   //footer validation
   await expect (page.getByText("info@arcinclusion.com")).toBeVisible();
   await expect (page.getByText("Quick links")).toBeVisible();
