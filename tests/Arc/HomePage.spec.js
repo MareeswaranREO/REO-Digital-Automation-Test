@@ -37,7 +37,6 @@ test ('Home page', async ({page})=>{
   //footer validation
   await expect (page.getByText("info@arcinclusion.com")).toBeVisible();
   await expect (page.getByText("Quick links")).toBeVisible();
-  await page.waitForTimeout(3000);
   await page.close();
 
 } )
