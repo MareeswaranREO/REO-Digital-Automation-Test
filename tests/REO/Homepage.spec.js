@@ -4,6 +4,7 @@ test('test', async ({ page }) => {
   await page.goto('https://www.reodigital.com/');
   await page.waitForTimeout(5000);
   await page.getByRole('button', { name: 'Accept' }).click();
+  await expect (page.locator('//img[@fetchpriority="high"]')).toBeVisible();
   await page.getByRole('list').filter({ hasText: 'February 4, 2025 GA4 Agony' }).getByRole('link').first().click();
   await page.getByRole('link', { name: 'Back to search' }).click();
   await page.locator('.elementor-widget-container > a').first().click();
@@ -23,4 +24,6 @@ test('test', async ({ page }) => {
   await page.locator('#input_4_3').click();
   await page.locator('#input_4_3').fill('mareeswaran.ramar@reodigital.com');
   await page.locator('.icon.icon-cross-circle').click();
+  await page.close();
+
 });
