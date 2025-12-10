@@ -56,13 +56,13 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
 
-      {
-      name: 'mobile-chrome',
-      use: {
-        browserName: 'chromium',
-        ...devices['Pixel 7'], // or iPhone 14, etc.
-      },
-    }
+     // {
+      //name: 'mobile-chrome',
+      //use: {
+    //    browserName: 'chromium',
+    //   ...devices['Pixel 7'], // or iPhone 14, etc.
+    //  },
+   // }
 
 
 
