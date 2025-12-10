@@ -15,7 +15,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   //time out 
-   timeout: 620000,
+   timeout: 80000,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -55,6 +55,17 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+
+      {
+      name: 'mobile-chrome',
+      use: {
+        browserName: 'chromium',
+        ...devices['Pixel 7'], // or iPhone 14, etc.
+      },
+    }
+
+
+
 
     /* Test against mobile viewports. */
      //{
