@@ -27,7 +27,7 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Your message*' }).click();
   await page.getByRole('textbox', { name: 'Your message*' }).fill('test');
 
- const checkbox=  await page.frameLocator("//iframe[@title='reCAPTCHA']").click();
- await checkbox.click();
+ //const checkbox=  await page.frameLocator("//iframe[@title='reCAPTCHA']").click();
+ //await checkbox.click();
  await page.waitForTimeout(5000);
 });
