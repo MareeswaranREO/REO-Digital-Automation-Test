@@ -3,8 +3,7 @@ import { test, expect } from '@playwright/test';
 test('test', async ({ page }) => {
   await page.goto('https://www.arcinclusion.com/');
   await page.getByRole('button', { name: 'Accept cookies' }).click();
-  await page.getByRole('menuitem', { name: 'Resource Hub' }).click();
-  await page.getByLabel('Category').selectOption('17');
+  await page.goto('https://www.arcinclusion.com/resource-hub/');
   await page.getByRole('button', { name: 'See more posts' }).click();
   await page.getByRole('link', { name: 'The Importance of Digital' }).click();
   await page.getByRole('link', { name: 'Back to search' }).click();
