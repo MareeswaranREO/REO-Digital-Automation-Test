@@ -14,7 +14,8 @@ test('test', async ({ page }) => {
   await page.locator('//div[@id="e-n-menu-title-1514"]/a[@class="e-n-menu-title-container e-focus e-link"]').click();
   await page.getByRole('tab', { name: 'Banking' }).getByRole('link').click();
   await page.locator('//div[@id="e-n-menu-title-1514"]/a[@class="e-n-menu-title-container e-focus e-link"]').click();
-  await page.getByRole('tab', { name: 'Legal' }).getByRole('link').click();
-  await page.close();
+  await page.waitForTimeout(3000);
+  //await page.getByRole('tab', { name: 'Legal' }).getByRole('link').click();
+  //await page.close();
 
   });

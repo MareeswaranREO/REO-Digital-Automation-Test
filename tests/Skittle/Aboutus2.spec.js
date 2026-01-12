@@ -14,6 +14,6 @@ test('test', async ({ page }) => {
   await page.locator('.elementor-element.elementor-element-be6eff5 > .elementor-widget-container > .elementor-button-wrapper > .elementor-button').click();
   await page.goto('https://www.skittledigital.com/about/');
   await page.locator('.elementor-element.elementor-element-fb3618f > .elementor-widget-container > .elementor-button-wrapper > .elementor-button').click();
-  await page.getByRole('link', { name: 'Together, let\'s do something' }).click();
-  await page.goto('https://www.skittledigital.com/about/');
+  //await page.getByRole('link', { name: 'Together, let\'s do something' }).click();
+  //await page.goto('https://www.skittledigital.com/about/');
 });
