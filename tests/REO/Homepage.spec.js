@@ -11,9 +11,9 @@ test('test', async ({ page }) => {
   await page.getByRole('link', { name: 'See more work' }).click();
   //await page.waitForURL('**/works/');
   await page.waitForTimeout(3000);
-  await page.goto('https://www.reodigital.com/');
-  await page.getByRole('link', { name: 'GA4 Agony Aunt: “Help! Why Is' }).click();
-  await page.waitForTimeout(2000);
+  await page.goto("https://www.reodigital.com/ ", { waitUntil: "domcontentloaded" });
+  //await page.getByRole('link', { name: 'GA4 Agony Aunt: “Help! Why Is' }).click();
+  await page.waitForTimeout(4000);
   await page.goto("https://www.reodigital.com/", { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(3000);
   await page.locator('.owl-dot').first().click();

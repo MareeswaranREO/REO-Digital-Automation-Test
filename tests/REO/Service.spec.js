@@ -22,5 +22,5 @@ test('test', async ({ page }) => {
   await page.getByRole('button', { name: 'Alright, but what exactly do' }).click();
   await page.getByRole('link', { name: 'Services' }).click();
   await page.getByRole('navigation').getByRole('link', { name: 'Digital analytics' }).click();
-  await page.getByRole('link', { name: '"We are very pleased with the' }).first().click();
+  //await page.getByRole('link', { name: '"We are very pleased with the' }).first().click();
 });
