@@ -8,6 +8,7 @@ test('test', async ({ page }) => {
   });
   await page.getByRole('button', { name: 'ACCEPT' }).click();
   await page.hover('//div[@id="e-n-menu-title-1515"]/div[@class="e-n-menu-title-container"]');
+  await page.waitForTimeout(3000);
   await page.locator('//div[@class="e-n-menu-content e-active"]//span[@class="elementor-button-text"][normalize-space()="View all posts"]').click();
   await page.getByPlaceholder('Search …').fill('PPC');
   await page.waitForTimeout(3000);
