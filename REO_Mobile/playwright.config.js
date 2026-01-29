@@ -13,7 +13,10 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  //testDir: './tests/Skittle',
   testDir: './tests',
+  //time out 
+   timeout: 620000,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -26,11 +29,15 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    /* Base URL to use in actions like `await page.goto('')`. */
+    /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    //trace: 'on-first-retry',
+  trace: 'on',
+  headless: true,
+  video:'on',
+  screenshot:'on',
   },
 
   /* Configure projects for major browsers */
@@ -39,27 +46,39 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
+      /*
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-
+    */
+   /*
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+*/
+     // {
+      //name: 'mobile-chrome',
+      //use: {
+    //    browserName: 'chromium',
+    //   ...devices['Pixel 7'], // or iPhone 14, etc.
+    //  },
+   // }
+
+
+
 
     /* Test against mobile viewports. */
-    // {
+     //{
     //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
+   //   use: { ...devices['Pixel 5'] },
+   //  },
+   //  {
+   //    name: 'Mobile Safari',
+  //    use: { ...devices['iPhone 12'] },s
+   //  },
+    
     /* Test against branded browsers. */
     // {
     //   name: 'Microsoft Edge',
